@@ -7,24 +7,27 @@ void Fahrzeug::vKopf(std::ostream& out)		//Hier formt sich den Ueberschrift
 {
 		  out << "\nID" 
 			  << std::setw(8) << "Name"
-			  << std::setw(24) << "MaxGeschwindigkeit"
-			  << std::setw(16) << "Gesamtstrecke\n";
+			  << std::setw(24) << "MaxGeschwindigkeit"		//Inhalt, Verbrauch, Volumen
+			  << std::setw(16) << "Gesamtstrecke"
+			  << std::setw(13) << "TankVolumen"
+			  << std::setw(13) << "TankInhalt"
+			  << std::setw(13) << "Verbrauch\n";
 
 		  out << std::setfill('-')
-			  << std::setw(53);
+			  << std::setw(90);
 }
 void Fahrzeug::vAusgeben(std::ostream& out)		//Hier formt sich das untene Teil der Tabelle
 {
 		  out << std::setfill(' ')
 			  << std::right
 			  << std::setw(3) << p_iID
-			  << std::setw(2) << ""
+			  << std::setw(2) << ""						//iskat da polzvam std::ios::setiosflags
 			  << std::left
 			  << std::setw(22) << p_sName
 			  << std::right
 			  << std::fixed << std::setprecision(2)
 			  << std::setw(6) << p_dMaxGeschwindigkeit
-			  << std::setw(15) << p_dGesamtStrecke << "\n";
+			  << std::setw(16) << p_dGesamtStrecke;
 }
 void Fahrzeug::vSimulieren()
 {

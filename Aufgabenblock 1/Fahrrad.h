@@ -5,7 +5,8 @@
 
 class Fahrrad : public Fahrzeug
 {
-
+	public:
+		double dTanken(double dMenge = std::numeric_limits<double>::infinity()) override;
 };
 
 #endif

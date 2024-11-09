@@ -47,11 +47,11 @@ public:
 		std::cout << "\n\nFahrzeug " << p_sName << " mit ID " << p_iID << " geloescht.";
 	}
 
-	void vAusgeben(std::ostream& out);
+	virtual void vAusgeben(std::ostream& out);
 
 	static void vKopf(std::ostream& out);
 
-	void vSimulieren();
+	virtual void vSimulieren();
 
 	virtual double dTanken(double p_dMenge = std::numeric_limits<double>::infinity()) 
 	{
