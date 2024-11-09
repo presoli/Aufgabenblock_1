@@ -44,7 +44,7 @@ public:
 
 	virtual ~Fahrzeug()		//Den Destruktor
 	{
-		std::cout << "\nFahrzeug " << p_sName << " mit ID " << p_iID << " geloescht.";
+		std::cout << "\n\nFahrzeug " << p_sName << " mit ID " << p_iID << " geloescht.";
 	}
 
 	void vAusgeben(std::ostream& out);

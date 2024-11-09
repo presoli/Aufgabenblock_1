@@ -37,9 +37,7 @@ void Fahrzeug::vSimulieren()
 		std::cout << "\nGesamte Fahrzeit des Fahrzeugs: " << p_dGesamtZeit;
 		p_dGesamtStrecke = p_dMaxGeschwindigkeit * p_dGesamtZeit;
 		std::cout << "\nGesamtstrecke: " << p_dGesamtStrecke << "km";
-		p_dZeit = dGlobaleZeit;
-		
-				  
+		p_dZeit = dGlobaleZeit;				  
 				  
 	}
 }

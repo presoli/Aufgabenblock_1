@@ -55,16 +55,17 @@ void vAufgabe_1a()
 	}
 
 }
-void Test()
+void vTest()
 {
-	PKW pkw1("audi", 160, 5.4, 70);
-	pkw1.dTanken(21);
+	std::unique_ptr<PKW> pkw1(std::make_unique<PKW>("audi", 160.7, 5.4));
+	pkw1->dTanken(23.21);
 }
 
 int main()
 {
 	//Май трябваше да направим Аусгебен функцията с ostream, за да избегнем "cout::endl"
 	//vAufgabe_1a();
+	vTest();
 
 	return 0;
 }
