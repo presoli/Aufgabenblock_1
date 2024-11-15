@@ -21,7 +21,7 @@ public:
 	
 	double dTanken(double dMenge = std::numeric_limits<double>::infinity()) override;
 	void vSimulieren() override;
-	void vAusgeben(std::ostream& out) override;
+	std::ostream& oAusgeben(std::ostream& out) const override;
 	
 };
 #endif

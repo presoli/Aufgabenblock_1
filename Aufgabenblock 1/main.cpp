@@ -28,7 +28,7 @@ void vAufgabe_1()
 	for (std::shared_ptr<PKW> vehicle : vector2)
 	{
 		std::cout << "\n";
-		vehicle->vAusgeben(std::cout);
+		vehicle->oAusgeben(std::cout);
 	}
 
 
@@ -56,16 +56,43 @@ void vAufgabe_1a()
 		dGlobaleZeit += 0.5;
 	}
 }
-void vTest()
+void vAufgabe_2()
 {
-	std::unique_ptr<PKW> pkw1(std::make_unique<PKW>("audi", 160.7, 7.8, 80));
-	pkw1->dTanken(100);
+	int PKWcount;
+	std::cin >> PKWcount;
+	int fahrradCount;
+	std::cin >> fahrradCount;
+	std::vector <std::unique_ptr<Fahrzeug>> carAndBike;
+	for (int i = 0; i < PKWcount; i++)
+	{
+		carAndBike.push_back(std::make_unique<PKW>("Ford", 70, 4.2, 200));
+	}
+	for (int i = 0; i < fahrradCount; i++)
+	{
+		carAndBike.push_back(std::make_unique<Fahrrad>("Kolelo", 40));
+	}
+
+	while (dGlobaleZeit <= 3.0)
+	{
+		Fahrzeug::vKopf(std::cout);
+		for (std::unique_ptr<Fahrzeug>& fahrzeug : carAndBike)
+		{
+			fahrzeug->vSimulieren();
+			if (dGlobaleZeit == 3.0)
+			{
+				fahrzeug->dTanken();
+			}
+			std::cout << fahrzeug;
+		}
+		
+		dGlobaleZeit += 0.5;
+	}
 	
 }
 
 int main()
 {
-	vAufgabe_1();
+	vAufgabe_2();
 	//vTest();
 	
 

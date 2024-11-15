@@ -3,7 +3,6 @@
 #define FAHRZEUG_H_
 #include <string>
 #include <iostream>
-#include <chrono>
 extern double dGlobaleZeit;
 
 class Fahrzeug
@@ -47,7 +46,8 @@ public:
 		std::cout << "\n\nFahrzeug " << p_sName << " mit ID " << p_iID << " geloescht.";
 	}
 
-	virtual void vAusgeben(std::ostream& out);
+	virtual std::ostream& oAusgeben(std::ostream& out) const;
+	
 
 	static void vKopf(std::ostream& out);
 
@@ -57,9 +57,13 @@ public:
 	{
 		return 0.0;
 	}
+	virtual double dGeschwindigkeit() const
+	{
+		return p_dMaxGeschwindigkeit;
+	}
 
 
 
 };
-
+std::ostream& operator << (std::ostream& o, const Fahrzeug& fr);
 #endif
